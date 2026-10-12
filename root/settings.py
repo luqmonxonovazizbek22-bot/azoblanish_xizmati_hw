@@ -41,12 +41,16 @@ INSTALLED_APPS = [
     'drf_yasg',
     'rest_framework.authtoken',
     'app.apps.AppConfig',
+    'corsheaders',
 ]
 
 AUTH_USER_MODEL = 'app.User'
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
